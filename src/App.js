@@ -4,6 +4,7 @@ import ContactList from './components/ContactList/ContactList';
 import Filter from './components/Filter/Filter';
 import initialContacts from './data/initialContacts.json';
 import shortid from 'shortid';
+import style from './App.module.css';
 
 class App extends Component {
   state = {
@@ -69,7 +70,7 @@ class App extends Component {
     const visibleContacts = this.getVisibleContacts();
 
     return (
-      <>
+      <section className={style.container}>
         <h1>Phonebook</h1>
         <ContactForm onSubmit={this.addContact} />
 
@@ -79,7 +80,7 @@ class App extends Component {
           contacts={visibleContacts}
           onDeleteContact={this.deleteContact}
         />
-      </>
+      </section>
     );
   }
 }
